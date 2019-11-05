@@ -11,20 +11,22 @@ const Header = ({ siteTitle }) => {
         setOpen(!open);
     }
 
-    window.addEventListener('scroll', debounce(() => {
-        let supportPageOffset = window.pageXOffset !== undefined;
-        let isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
-        let scroll = {
-            x: supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft,
-            y: supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop
-        };
-
-        if (scroll.y > 0 && window.innerWidth > 960) {
-            setBackgroundClass('has-background-red');
-        } else {
-            setBackgroundClass(null);
-        }
-    }, 50));
+    if (typeof window !== 'undefined') {
+        window.addEventListener('scroll', debounce(() => {
+            let supportPageOffset = window.pageXOffset !== undefined;
+            let isCSS1Compat = ((document.compatMode || '') === 'CSS1Compat');
+            let scroll = {
+                x: supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft,
+                y: supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop
+            };
+    
+            if (scroll.y > 0 && window.innerWidth > 960) {
+                setBackgroundClass('has-background-red');
+            } else {
+                setBackgroundClass(null);
+            }
+        }, 50));
+    }
 
     return (
         <nav className={`${ backgroundClass ? backgroundClass + ' ' : '' }navbar is-transparent is-fixed-top`} role="navigation" aria-label="main navigation">
