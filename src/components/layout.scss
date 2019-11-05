@@ -1,3 +1,72 @@
 @charset "utf-8";
-// If need, change your variables before importing Bulma
-@import "~bulma/bulma.sass";
+@import url(https://fonts.googleapis.com/css?family=Staatliches&display=swap);
+@import "~bulma/sass/utilities/_all.sass";
+
+// Bulma variables
+$navbar-background-color: transparent;
+$navbar-item-color: #FFFFFF;
+$navbar-item-hover-color: #FF715B;
+$navbar-item-hover-background-color: transparent;
+
+// Personal variables
+
+$family-heading: Staatliches, cursive;
+
+@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/layout/_all.sass";
+@import "~bulma/sass/elements/_all.sass";
+@import "~bulma/sass/components/_all.sass";
+@import "~bulma/sass/grid/_all.sass";
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $family-heading;
+}
+
+.navbar {
+    transition: background 0.2s;
+}
+
+.navbar .is-flex {
+    align-items: center;
+}
+
+.navbar .navbar-menu.is-active {
+    height: calc(100vh - 3.25rem);
+}
+
+.footer a {
+    color: #FFFFFF;
+}
+
+.footer a:hover {
+    color: #FF715B;
+}
+
+.footer ul li {
+    list-style: none;
+}
+
+.has-text-red {
+    color: #FF715B !important;
+}
+
+.has-background-red {
+    background-color: #FF715B !important;
+}
+
+.navbar.has-background-red a:hover,
+.navbar .is-active a:hover {
+    color: $grey-darker !important;
+}
+
+@media screen and (max-width: $desktop) {
+    .navbar {
+        background: #FF715B;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .navbar-menu {
+        box-shadow: none;
+    }
+}
