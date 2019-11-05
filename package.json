@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Timothy Bennett Potfolio",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Timothy Bennett <bennett.timothy.j@gmail.com>",
   "dependencies": {
     "bulma": "^0.8.0",
     "gatsby": "^2.17.6",
