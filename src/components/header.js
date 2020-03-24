@@ -38,7 +38,7 @@ const Header = ({ siteTitle }) => {
                         </span>
                         <h2 className="is-size-3">TJB</h2>
                     </div>
-                    <div className="navbar-burger burger" onClick={toggleMenu} aria-label="menu" aria-expanded="false">
+                    <div className="navbar-burger burger" onClick={ toggleMenu } aria-label="menu" aria-expanded="false">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
