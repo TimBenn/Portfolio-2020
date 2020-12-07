@@ -157,7 +157,7 @@ const IndexPage = () => {
           <div className="columns is-flex-wrap-wrap is-mobile">
             <div className="column is-full-mobile is-full-tablet is-one-half-desktop is-one-third-widescreen is-one-third-fullhd">
               <Card
-                animation="slide-right"
+                animation="slide-up"
                 delay="300"
                 duration="300"
                 className="card"
@@ -185,7 +185,7 @@ const IndexPage = () => {
             </div>
             <div className="column is-full-mobile is-full-tablet is-full-desktop is-one-third-widescreen is-one-third-fullhd">
               <Card
-                animation="slide-left"
+                animation="slide-up"
                 delay="600"
                 duration="300"
                 className="card"
@@ -207,7 +207,7 @@ const IndexPage = () => {
             <div className="column is-full-mobile is-full-tablet is-half-desktop is-half-widescreen is-half-fullhd">
               <Card
                 hideShadow
-                animation="slide-right"
+                animation="slide-up"
                 delay="300"
                 duration="300"
                 style={{
@@ -221,7 +221,7 @@ const IndexPage = () => {
             <div className="column is-full-mobile is-full-tablet is-half-desktop is-half-widescreen is-half-fullhd">
               <Card
                 hideShadow
-                animation="slide-left"
+                animation="slide-up"
                 delay="300"
                 duration="300"
                 style={{
