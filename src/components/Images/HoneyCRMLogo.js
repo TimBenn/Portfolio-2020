@@ -13,25 +13,35 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
+const HoneyCRMLogo = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+      mobileImage: file(relativePath: { eq: "mobile/honey-logo-mobile.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+          fixed(width: 150, height: 64) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      desktopImage: file(relativePath: { eq: "honey-logo.png" }) {
+        childImageSharp {
+          fixed(width: 230, height: 97) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `)
 
-  return (
-    <Img
-      style={{ flexGrow: 1 }}
-      fluid={data.placeholderImage.childImageSharp.fluid}
-    />
-  )
+  const sources = [
+    data.mobileImage.childImageSharp.fixed,
+    {
+      ...data.desktopImage.childImageSharp.fixed,
+      media: `(min-width: 1200px)`,
+    },
+  ]
+
+  return <Img fixed={sources} />
 }
 
-export default Image
+export default HoneyCRMLogo

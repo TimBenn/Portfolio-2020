@@ -13,25 +13,20 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
+const MadeWithBulma = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+      file(relativePath: { eq: "made-with-bulma.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+          fixed(width: 256, height: 48) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `)
 
-  return (
-    <Img
-      style={{ flexGrow: 1 }}
-      fluid={data.placeholderImage.childImageSharp.fluid}
-    />
-  )
+  return <Img fixed={data.file.childImageSharp.fixed} />
 }
 
-export default Image
+export default MadeWithBulma

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Timothy Bennett`,
-    description: `Full Stack Developer .`,
+    description: `Full-Stack Developer, Junior Ultimate Coder & Veteran.`,
     author: `@gatsbyjs`,
   },
   plugins: [
@@ -24,18 +24,19 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/brain.svg`, // This path is relative to the root of the site.
+        icon: `src/images/SVG/favicon.svg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-google-analytics`,
-        options: {
-          trackingId: "UA-144825156-1",
-          head: false,
-          cookieDomain: "timothyjbennett.com",
-        }
-    }
+      options: {
+        trackingId: "UA-144825156-1",
+        head: false,
+        cookieDomain: "timothyjbennett.com",
+      },
+    },
+    `gatsby-plugin-scroll-reveal`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

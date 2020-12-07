@@ -1,68 +1,258 @@
 @charset "utf-8";
-@import url(https://fonts.googleapis.com/css?family=Staatliches&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap);
+
 @import "~bulma/sass/utilities/_all.sass";
 
 // Bulma variables
 $navbar-background-color: transparent;
 $navbar-item-color: #FFFFFF;
-$navbar-item-hover-color: #FF715B;
+$navbar-item-hover-color: #F6AE2D;
 $navbar-item-hover-background-color: transparent;
+$card-content-padding: 4rem 2.5rem;
+$card-shadow: 0px -1px 15px rgba(0, 0, 0, 0.25);
+
 
 // Personal variables
 
-$family-heading: Staatliches, cursive;
+$family-heading: Bebas Neue, cursive;
+$family-primary: Roboto, sans-serif;
 
-@import "~bulma/sass/base/_all.sass";
-@import "~bulma/sass/layout/_all.sass";
-@import "~bulma/sass/elements/_all.sass";
-@import "~bulma/sass/components/_all.sass";
-@import "~bulma/sass/grid/_all.sass";
+@import "~bulma";
+
+body {
+  font-family: $family-primary;
+  color: #707070;
+}
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $family-heading;
+    margin-bottom: 40px;
+    color: #707070;
+}
+
+.button {
+  border-radius: 100px;
+}
+
+.button.has-button-gradient {
+  background: transparent linear-gradient(95deg, #42378F 0%, #823774 100%) 0% 0% no-repeat padding-box;
+  border: none;
+  color: #FFFFFF;
+  line-height: 1.5rem;
+  height: 2.34375em;
+  font-family: $family-heading;
+  letter-spacing: 1px;
+  padding-bottom: calc(0.4em - 1px);
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.title {
+  color: #707070;
+  margin-bottom: 40px !important;
 }
 
 .navbar {
-    transition: background 0.2s;
+  transition: background 0.2s;
+}
+
+.navbar .navbar-brand {
+  align-items: center;
+}
+
+.navbar .is-size-2 {
+  margin-bottom: 0;
 }
 
 .navbar .is-flex {
-    align-items: center;
+  align-items: center;
 }
 
 .navbar .navbar-menu.is-active {
-    height: calc(100vh - 3.25rem);
+  height: calc(100vh - 3.25rem);
+}
+
+.navbar .navbar-item {
+  font-weight: 600;
+}
+
+.navbar .navbar-item:hover {
+  color: #42378f;
+}
+
+.navbar.has-background-opaque-white {
+  background-color: rgba($color: #FFFFFF, $alpha: 0.8) !important;
+}
+
+.navbar.has-background-purple {
+  background: #42378F !important;
+}
+
+.navbar.has-background-opaque-white .navbar-item,
+.navbar.has-background-opaque-white .fa-brain,
+.navbar.has-background-opaque-white .is-size-2.has-text-light {
+  color: #42378f !important;
+}
+
+.navbar.has-background-opaque-white .navbar-item:hover {
+  color:#f53844 !important;
+}
+
+.navbar.has-background-opaque-white a:hover,
+.navbar .is-active a:hover {
+    color: #42378f !important;
+}
+
+.hero .title.is-1 {
+  font-size: 4rem;
+  letter-spacing: 3px;
+}
+
+.hero .subtitle.is-4 {
+  letter-spacing: 1.5px;
+}
+
+.hero.has-red-gradient {
+  background-color: #42378f;
+  background-image: linear-gradient(315deg, #42378f 0%, #f53844 74%);
+}
+
+.has-background-purple {
+  background: #42378F !important;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.section.about {
+  padding-bottom: 300px;
+}
+
+.section.about .container {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.section.skills .container {
+  margin-top: -300px;
+}
+
+.section.skills .container .column .card {
+  height: 100%;
+}
+
+.tag.is-green {
+  background: #62C370;
+  color: #FFFFFF;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.footer .tag.is-red {
+  background: #ffffff;
+  color: #f53844;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.footer .tag.is-light-blue {
+  background: #ffffff;
+  color: #61dafb;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.section.projects {
+  background: #F53844;
+  padding-bottom: 200px;
+}
+
+.section.call-to-action {
+  padding-bottom: 0;
+  padding-top: 0;
+  background: transparent;
+}
+
+.footer {
+  background-color: #707070;
+}
+
+.footer .card {
+  margin-top: -134.5px;
+  margin-bottom: 40px;
+}
+
+.footer .card .card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 4rem;
+}
+
+.footer .card .title.is-size-2 {
+  margin-bottom: 0 !important;
 }
 
 .footer a {
-    color: #FFFFFF;
-}
-
-.footer a:hover {
-    color: #FF715B;
+  color: #FFFFFF;
 }
 
 .footer ul li {
-    list-style: none;
-}
-
-.has-text-red {
-    color: #FF715B !important;
-}
-
-.has-background-red {
-    background-color: #FF715B !important;
-}
-
-.navbar.has-background-red a:hover,
-.navbar .is-active a:hover {
-    color: $grey-darker !important;
+  list-style: none;
 }
 
 @media screen and (max-width: $desktop) {
     .navbar {
-        background: #FF715B;
+      background: rgba($color: #FFFFFF, $alpha: 1.0) !important;;
     }
+
+    .navbar .is-size-2.has-text-light {
+      margin-left: 15px;
+    }
+
+    .navbar .fas,
+    .navbar .is-size-2.has-text-light {
+      color: #42378f !important;
+    }
+
+    .navbar .navbar-item {
+      color: #42378f;
+    }
+    
+    .navbar .navbar-burger {
+      color: #42378f;
+    }
+
+    .section.about {
+      padding-bottom: 3rem;
+    }
+
+    .section.about .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .section.skills .container {
+      margin-top: 0px;
+    }
+
+    .footer .card .card-content {
+      flex-direction: column;
+      padding: 4rem 4rem;
+    }
+
+    .footer .card .card-content .is-size-3-mobile {
+      margin-bottom: 40px !important;
+    }
+}
+
+@media screen and (max-width: $tablet) {
+  .hero.is-fullheight-with-navbar {
+    min-height: calc(75vh - 3.25rem);
+  }
+
+  .image-card {
+    min-height: 200px !important;
+  }
 }
 
 @media screen and (max-width: 1023px) {

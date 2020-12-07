@@ -13,25 +13,33 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
+const TridigitalLogo = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+      mobileImage: file(relativePath: { eq: "mobile/td-logo-mobile.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+          fixed(width: 90, height: 95) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      desktopImage: file(relativePath: { eq: "tridigital-logo.png" }) {
+        childImageSharp {
+          fixed(width: 140, height: 151) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `)
-
-  return (
-    <Img
-      style={{ flexGrow: 1 }}
-      fluid={data.placeholderImage.childImageSharp.fluid}
-    />
-  )
+  const sources = [
+    data.mobileImage.childImageSharp.fixed,
+    {
+      ...data.desktopImage.childImageSharp.fixed,
+      media: `(min-width: 1200px)`,
+    },
+  ]
+  return <Img fixed={sources} />
 }
 
-export default Image
+export default TridigitalLogo

@@ -13,25 +13,20 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
+const KanbanLogo = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+      file(relativePath: { eq: "kanban-logo.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+          fixed(width: 190, height: 57) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `)
 
-  return (
-    <Img
-      style={{ flexGrow: 1 }}
-      fluid={data.placeholderImage.childImageSharp.fluid}
-    />
-  )
+  return <Img fixed={data.file ? data.file.childImageSharp.fixed : null} />
 }
 
-export default Image
+export default KanbanLogo
