@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-144825156-1",
+        trackingId: "UA-133166987-1",
         head: false,
         cookieDomain: "timothyjbennett.com",
       },
