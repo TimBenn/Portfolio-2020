@@ -222,7 +222,7 @@ const IndexPage = () => {
               <Card
                 hideShadow
                 animation="slide-up"
-                delay="300"
+                delay="450"
                 duration="300"
                 style={{
                   background: "#5F38BE",
